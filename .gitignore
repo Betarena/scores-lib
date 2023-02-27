@@ -1,0 +1,5 @@
+node_modules/
+tsconfig.json
+src/*
+package-lock.json
+# .vscode/

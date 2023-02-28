@@ -92,11 +92,9 @@ export const BETARENA_CACHE_LIVESCORES_V2_DATA_T = gql `
   @cached 
   (ttl: 300)
   {
-    scores_livescore_football_translations {
+    scores_livescore_football_translations_v2 {
       lang
-      status_abv
-      terms
-      status
+      translation
     }
     scores_general_translations {
       lang

@@ -2,12 +2,12 @@ import { FIXTURE_STATUS_TYPES } from "../src/api/sportmonks";
 import type {
   B_H_HF,
   B_H_SFL,
-  B_H_SGT,
-  B_H_SLFT,
+  B_H_SGT, B_H_SLFT_V2,
   B_H_ST,
   DataStats,
   Round, Scores,
   ScoresTournamentsUrls,
+  SLFT_Translation,
   Time,
   Urls
 } from "./hasura";
@@ -22,7 +22,7 @@ import type {
 export interface B_LS2_T 
   extends 
   B_H_SGT,
-  B_H_SLFT {
+  SLFT_Translation {
   lang?: string
 }
 
@@ -61,7 +61,7 @@ export interface B_H_HF_LSV2_Q {
   scores_football_leagues?: B_H_SJ_SFL[]
   scores_tournaments?: B_H_ST[]
   // NOTE: (translations)
-  scores_livescore_football_translations?: B_H_SLFT[]
+  scores_livescore_football_translations_v2?: B_H_SLFT_V2[]
   scores_general_translations?: B_H_SGT[]
 }
 

@@ -847,7 +847,7 @@ export interface BETARENA_HASURA_scores_leagues_list_translations {
 /**
  * [ℹ] HASURA: scores_tournaments (&)
 */
-export interface BETARENA_HASURA_scores_tournaments {
+export interface B_H_ST {
   author?:        ScoresTournamentsAuthor;
   country?:       string;
   date?:          Date;

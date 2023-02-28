@@ -53,6 +53,7 @@ export async function generate_historic_fixtures_day_group_map (
     const FIXTURE_DATA: LS2_C_Fixture = {
       id: h_fixture?.id,
       league_id: h_fixture?.league_id,
+      status: h_fixture?.status,
       teams: {
         home: {
           name: h_fixture?.home_team_name,
@@ -66,7 +67,7 @@ export async function generate_historic_fixtures_day_group_map (
       time: h_fixture?.time,
       fixture_day: h_fixture?.fixture_day,
       urls: h_fixture?.urls,
-      tips: h_fixture?.tip_link_wp
+      tips: h_fixture?.tip_link_wp,
     }
     // [ℹ] add to existing date (group)
     if (historic_fixtures_map.has(h_fixture.fixture_day)) {

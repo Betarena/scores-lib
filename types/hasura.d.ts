@@ -445,7 +445,7 @@ export interface BETARENA_HASURA_player_positions_translations {
 /**
  * [ℹ] HASURA: scores_general_translations (&)
 */
-export interface B_H_SGT {
+export interface B_H_SGT { 
   lang?:                      string;
   countries?:                 { [key: string]: string };
   widgets_no_data_available?: WidgetsNoDataAvailable;
@@ -1744,4 +1744,66 @@ export interface h2h_Translations {
 	over_3_5?: string;
 	widget_title?: string;
 	yellow_cards?: string;
+}
+
+/**
+ * [ℹ] HASURA: scores_livescore_football_translations_v2 (&)
+*/
+export interface B_H_SLFT_V2 {
+  lang?:        string;
+  translation?: SLFT_Translation;
+} export interface SLFT_Translation {
+  all?:           string;
+  tip?:           string;
+  days?:          SLFT_Days;
+  live?:          string;
+  title?:         string;
+  status?:        SLFT_Status;
+  no_info?:       SLFT_NoInfo;
+  more_games?:    string;
+  status_abbrev?: SLFT_StatusAbbrev;
+} export interface SLFT_Days {
+  Fri?:  string;
+  Mon?:  string;
+  Sat?:  string;
+  Sun?:  string;
+  Tue?:  string;
+  Wed?:  string;
+  Thur?: string;
+} export interface SLFT_NoInfo {
+  desc?:    string;
+  "sub-t"?: string;
+  title?:   string;
+} export interface SLFT_Status {
+  AU?:       string;
+  ET?:       string;
+  FT?:       string;
+  HT?:       string;
+  NS?:       string;
+  WO?:       string;
+  AET?:      string;
+  INT?:      string;
+  TBA?:      string;
+  ABAN?:     string;
+  LIVE?:     string;
+  SUSP?:     string;
+  BREAK?:    string;
+  CANCL?:    string;
+  POSTP?:    string;
+  FT_PEN?:   string;
+  AWARDED?:  string;
+  PEN_LIVE?: string;
+} export interface SLFT_StatusAbbrev {
+  AU?:       string;
+  FT?:       string;
+  HT?:       string;
+  WO?:       string;
+  AET?:      string;
+  TBA?:      string;
+  SUSP?:     string;
+  BREAK?:    string;
+  CANCL?:    string;
+  POSTP?:    string;
+  FT_PEN?:   string;
+  PEN_LIVE?: string;
 }

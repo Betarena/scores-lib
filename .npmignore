@@ -1,5 +1,4 @@
 node_modules/
 tsconfig.json
-src/*
 .vscode/
 package-lock.json

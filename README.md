@@ -7,3 +7,7 @@ Global / Common types for Betarena
 > NOTE: When naming new types, use the following naming strucutre:
 
 TODO:
+
+```
+npm publish --access=public
+```

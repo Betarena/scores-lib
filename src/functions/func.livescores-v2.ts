@@ -1,5 +1,5 @@
 import { GraphQLClient } from "graphql-request";
-import { B_H_ST } from "../../types/hasura.js";
+import { B_H_LFC, B_H_LSF_V2, B_H_ST } from "../../types/hasura.js";
 import { B_H_HF_LSV2_Q, B_H_SJ_HF_LSV2, B_H_SJ_SFL, LS2_C_Fixture, LS2_C_League } from "../../types/livescores-v2.js";
 import { BETARENA_CACHE_LIVESCORES_V2_DATA_0, BETARENA_CACHE_LIVESCORES_V2_DATA_1 } from "../graphql/query.livescores-v2.js";
 
@@ -9,6 +9,8 @@ import { BETARENA_CACHE_LIVESCORES_V2_DATA_0, BETARENA_CACHE_LIVESCORES_V2_DATA_
  * dates on an string[] type; 
  * NOTE: takes into account getting target (single) date
  * fixtures data;
+ * @param {GraphQLClient} initGrapQLClient
+ * @param {string[]} fixture_dates
  * @returns {Promise< B_H_HF_LSV2_Q >} B_H_HF_LSV2_Q
  */
 export async function get_target_date_fixtures (
@@ -92,13 +94,15 @@ export async function generate_historic_fixtures_day_group_map (
 
 /**
  * @description [GRAPH-QL] [GET] method for obtaining
- * target leagues data
- * @returns {Promise< B_H_SJ_SFL[] >} B_H_SJ_SFL
+ * target leagues data;
+ * @param {GraphQLClient} initGrapQLClient
+ * @param {number[]} league_ids_arr
+ * @returns {Promise< [B_H_SJ_SFL[], B_H_ST[], B_H_LSF_V2[], B_H_LFC[]] >} [B_H_SJ_SFL[], B_H_ST[], B_H_LSF_V2[], B_H_LFC[]]
  */
 export async function get_target_leagues (
   initGrapQLClient: GraphQLClient,
   league_ids_arr: number[]
-): Promise < [B_H_SJ_SFL[], B_H_ST[]] > {
+): Promise < [B_H_SJ_SFL[], B_H_ST[], B_H_LSF_V2[], B_H_LFC[]] > {
 
   const VARIABLES = {
     league_ids_arr,
@@ -106,7 +110,7 @@ export async function get_target_leagues (
   }
    
   // const t0 = performance.now();
-  const queryName = "BETARENA_CACHE_LIVESCORES_V2_DATA_1";
+  // const queryName = "BETARENA_CACHE_LIVESCORES_V2_DATA_1";
 	const response: B_H_HF_LSV2_Q = await initGrapQLClient.request (
     BETARENA_CACHE_LIVESCORES_V2_DATA_1,
     VARIABLES
@@ -114,13 +118,18 @@ export async function get_target_leagues (
   // const t1 = performance.now();
   // logs.push(`${queryName} completed in: ${(t1 - t0) / 1000} sec`);
 
-  return [response?.scores_football_leagues, response?.scores_tournaments];
+  return [
+    response?.scores_football_leagues, 
+    response?.scores_tournaments,
+    response?.leagues_supported_filter_v2,
+    response?.leagues_filtered_country
+  ];
 }
 
 /**
  * @description method to generate a Map<string, league[]>
  * grouped by league-id as the KEY and return;
- * @param {LS2_C_League} league_arr 
+ * @param {B_H_SJ_SFL[]} league_arr 
  * @returns {Promise < Map <number, LS2_C_League> >} Map <string, LS2_C_League>
  */
 export async function generate_leagues_map (
@@ -149,8 +158,8 @@ export async function generate_leagues_map (
 /**
  * @description method to generate a Map<string, league[]>
  * by their league-Id as the KEY and return;
- * @param league_arr 
- * @returns 
+ * @param {B_H_ST[]} league_arr 
+ * @returns {Promise < Map <number, B_H_ST> >} Map <number, B_H_ST>
  */
 export async function generate_tournaments_map (
   league_arr: B_H_ST[]

@@ -82,6 +82,14 @@ export const BETARENA_CACHE_LIVESCORES_V2_DATA_1 = gql`
       tournament_id
       urls
     }
+    leagues_supported_filter_v2 {
+      league_id
+      featured_livescore_leagues
+    }
+    leagues_filtered_country {
+      lang
+      leagues
+    }
   }
 `;
 
@@ -105,6 +113,9 @@ export const BETARENA_CACHE_LIVESCORES_V2_DATA_T = gql`
       widgets_no_data_available
       weekdays
       months
+      cities
+      common_expressions
+      players_positions
     }
   }
 `;

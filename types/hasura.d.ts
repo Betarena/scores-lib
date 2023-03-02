@@ -1080,7 +1080,7 @@ export interface BETARENA_HASURA_scores_league_list {
 /**
  * [ℹ] HASURA: leagues_filtered_country (&)
 */
-export interface BETARENA_HASURA_leagues_filtered_country {
+export interface B_H_LFC {
   lang: string
   leagues: {
     league_id: number
@@ -2067,4 +2067,13 @@ export interface B_H_SLFT_V2 {
   POSTP?:    string;
   FT_PEN?:   string;
   PEN_LIVE?: string;
+}
+
+/**
+ * [ℹ] HASURA: leagues_supported_filter_v2 (&)
+*/
+export interface B_H_LSF_V2 {
+  id?:                         number;
+  league_id?:                  number[];
+  featured_livescore_leagues?: number[];
 }

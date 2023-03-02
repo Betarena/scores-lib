@@ -1,6 +1,8 @@
 import { FIXTURE_STATUS_TYPES } from "../src/api/sportmonks";
 import type {
   B_H_HF,
+  B_H_LFC,
+  B_H_LSF_V2,
   B_H_SFL,
   B_H_SGT,
   B_H_SLFT_V2,
@@ -32,6 +34,8 @@ export interface B_LS2_T
 export interface B_LS2_D {
   fixtures_by_date?: LS2_C_FixtureDateGroup[];
   leagues?: LS2_C_League[];
+  leagues_geo_list?: B_H_LFC[]
+  leagues_feat_list?: number[]
 }
 
 /**
@@ -62,6 +66,8 @@ export interface B_H_HF_LSV2_Q {
   historic_fixtures?: B_H_SJ_HF_LSV2[]
   scores_football_leagues?: B_H_SJ_SFL[]
   scores_tournaments?: B_H_ST[]
+  leagues_supported_filter_v2?: B_H_LSF_V2[]
+  leagues_filtered_country?: B_H_LFC[]
   // NOTE: (translations)
   scores_livescore_football_translations_v2?: B_H_SLFT_V2[]
   scores_general_translations?: B_H_SGT[]

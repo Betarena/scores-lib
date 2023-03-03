@@ -18,7 +18,7 @@ import type {
 
 /**
  * ==========================================
- * CACHING TYPES - FINAL OBJECTS
+ * FINAL DATA OBJECTS
  * ========================================== 
 */
 

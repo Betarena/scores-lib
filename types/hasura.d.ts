@@ -1,6 +1,6 @@
 /**
  * NOTE: This file contains all of the HASURA DB
- * NOTE: TypeScript Interfaces 
+ * NOTE: TypeScript Interfaces (DECLARATIONS)
 */
 
 /**
@@ -832,7 +832,7 @@ export interface BETARENA_HASURA_scores_football_seasons_details_aggregate {
 /**
  * [ℹ] HASURA: scores_football_seasons_details (&)
 */
-export interface BETARENA_HASURA_scores_football_seasons_details {
+export interface B_H_SFSD {
   data_stats?:        SeasonDetailsDataStats;
   default_data?:      SeasonDetailsDefaultData;
   end_date?:          Date;
@@ -1034,7 +1034,7 @@ export interface BETARENA_HASURA_scores_football_seasons_details {
 /**
  * [ℹ] HASURA: sportsbook_details (&)
 */
-export interface BETARENA_HASURA_sportsbook_details {
+export interface B_H_SD {
   data?: { [key: string]: Sportbook };
   lang?: string;
 } export interface Sportbook {
@@ -1175,7 +1175,7 @@ export interface BETARENA_HASURA_scores_standings_home_widget_translations {
 /**
  * [ℹ] HASURA: historic_fixtures_aggregate (&)
 */
-export interface BETARENA_HASURA_historic_fixtures_aggregate {
+export interface B_H_HF_AG {
   aggregate?: Aggregate;
 } export interface Aggregate {
   totalCount?: number;
@@ -1660,7 +1660,7 @@ export interface B_H_HF {
 /**
  * [ℹ] HASURA: scores_widget_football_fixtures_odds_translations (&)
 */
-export interface BETARENA_HASURA_scores_widget_football_fixtures_odds_translations {
+export interface B_H_SWFFOT {
   lang?:         string;
   translations?: FixturesOddsTranslations;
 } export interface FixturesOddsTranslations {

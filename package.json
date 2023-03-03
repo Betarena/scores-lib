@@ -1,12 +1,13 @@
 {
   "name": "@betarena/scores-lib",
   "version": "0.5.7",
-  "description": "Global Types for Betarena",
+  "description": "Global Functions, Declarations, GraphQL and Types for Betarena",
   "main": "",
   "types": "index.d.ts",
   "scripts": {
     "tsc": "tsc",
-    "ts-watch": "tsc -w"
+    "ts-watch": "tsc -w",
+    "dev:up": "npm link"
   },
   "author": "Migbash",
   "license": "ISC",

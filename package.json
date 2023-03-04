@@ -7,7 +7,8 @@
   "scripts": {
     "tsc": "tsc",
     "ts-watch": "tsc -w",
-    "dev:up": "npm link"
+    "dev:up": "npm link",
+    "npm:publish": "npm publish --access=public"
   },
   "author": "Migbash",
   "license": "ISC",

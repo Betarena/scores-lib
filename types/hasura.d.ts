@@ -293,7 +293,7 @@ export interface BETARENA_HASURA_scores_widget_standings_translations {
 /**
  * [ℹ] HASURA: scores_football_teams (&)
 */
-export interface BETARENA_HASURA_scores_football_teams {
+export interface B_H_SFT {
   data?: Data;
   id?:   number;
   name?: string;
@@ -354,7 +354,7 @@ export interface BETARENA_HASURA_color_codes_league_standings_positions {
 /**
  * [ℹ] HASURA: scores_football_countries (&)
 */
-export interface BETARENA_HASURA_scores_football_countries {
+export interface B_H_SFC {
   id?:   number;
   data?: FootballCountriesData;
   name?: string;
@@ -378,7 +378,7 @@ export interface BETARENA_HASURA_scores_football_countries {
 /**
  * [ℹ] HASURA: scores_football_players (&)
 */
-export interface BETARENA_HASURA_scores_football_players {
+export interface B_H_SFP {
   data?:        FootballPlayersData;
   player_id?:   number;
   common_name?: string;
@@ -421,7 +421,7 @@ export interface BETARENA_HASURA_scores_football_players {
 /**
  * [ℹ] HASURA: scores_widget_top_players_translations (&)
 */
-export interface BETARENA_HASURA_scores_widget_top_players_translations {
+export interface B_H_SWTPT {
   lang?: string;
   data?: TopPlayersData;
 } export interface TopPlayersData {
@@ -437,7 +437,7 @@ export interface BETARENA_HASURA_scores_widget_top_players_translations {
 /**
  * [ℹ] HASURA: player_positions_translations (&)
 */
-export interface BETARENA_HASURA_player_positions_translations {
+export interface B_H_PPT {
   lang?:     string;
   position?: { [key: string]: string };
 }
@@ -823,7 +823,7 @@ export interface B_H_SFL {
 /**
  * [ℹ] HASURA: scores_football_seasons_details_aggregate (&)
 */
-export interface BETARENA_HASURA_scores_football_seasons_details_aggregate {
+export interface B_H_SFSD_AG {
   aggregate?: Aggregate;
 } export interface Aggregate {
   totalCount?: number;

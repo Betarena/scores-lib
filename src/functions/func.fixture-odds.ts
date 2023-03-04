@@ -14,9 +14,9 @@ import {
   FO_Weeks_Data
 } from "../../types/fixture-odds";
 import {
-  BETARENA_CACHE_FIXTURES_ODDS_DATA_0,
   BETARENA_CACHE_FIXTURES_ODDS_DATA_1,
-  BETARENA_CACHE_FIXTURES_ODDS_DATA_2
+  BETARENA_CACHE_FIXTURES_ODDS_DATA_2,
+  BETARENA_CACHE_FIXTURES_ODDS_DATA_T
 } from "../graphql/query.fixture-odds.js";
 
 //#endregion IMPORTS
@@ -683,23 +683,24 @@ export async function merge_weeks_rounds_to_league (
 }
 
 /**
- * @description obtain target current season_id's
+ * @description [GRAPH-QL] [GET] method for obtaining
+ * all target transaltions for the fixture-odds widget
  * @param {GraphQLClient} initGrapQLClient
- * @returns 
+ * @returns Promise<B_H_HF_FO_Q>
  */
-export async function get_current_seasons (
+export async function get_fixtures_translations (
   initGrapQLClient: GraphQLClient,
 ): Promise < B_H_HF_FO_Q > {
 
   // const t0 = performance.now();
-  // const queryName = "REDIS_CACHE_FIXTURES_ODDS_DATA_0";
+  // const queryName = "BETARENA_CACHE_FIXTURES_ODDS_DATA_T";
   const response: B_H_HF_FO_Q = await initGrapQLClient.request (
-    BETARENA_CACHE_FIXTURES_ODDS_DATA_0
+    BETARENA_CACHE_FIXTURES_ODDS_DATA_T
   );
   // const t1 = performance.now();
   // logs.push(`${queryName} completed in: ${(t1 - t0) / 1000} sec`);
 
   return response;
 }
- 
+
 //#endregion METHODS]

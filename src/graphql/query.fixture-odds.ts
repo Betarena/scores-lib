@@ -20,33 +20,10 @@ import { gql } from 'graphql-request';
 // <⬇️-type-queries-below-⬇️>
 
 /**
- * @description [GET] GraphQl Query target seasons
- * that are of type "is_current_season";
- * Cache (TTL:300);
- */
-export const BETARENA_CACHE_FIXTURES_ODDS_DATA_0 = gql`
-  query BETARENA_CACHE_FIXTURES_ODDS_DATA_0 
-  @cached 
-  (ttl: 300)
-  {
-    scores_football_seasons_details (
-      where: {
-        is_current_season: {
-          _eq: true
-        }
-      }
-    ) {
-      id
-    }
-  }
-`;
-
-/**
  * @description [GET] GraphQl Query get target fixtures
  * (historic_fixtures) that are of type season (is_current_season);
- * WARNING -> Large Query
- * WARNING -> Uses pagination
- * WARNING -> _0 dependent
+ * WARNING -> ⏳ Large Query
+ * WARNING -> ✅ Uses pagination
  * Cache (TTL:300);
  * @param {number} limit
  * @param {number} offset

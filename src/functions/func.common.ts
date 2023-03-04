@@ -42,3 +42,35 @@ export async function get_current_seasons (
 
   return response.scores_football_seasons_details;
 }
+
+// 🔵 EXPERIMENTAL 🔵
+// METHOD WRAPPER TIMER
+export function getSimpletGraphQueryWrapper(
+  fn: any
+) {
+  console.log('🔴 HERE!')
+  return async function () {
+    try {
+      console.log('🔴 HERE!')
+      const t0 = performance.now();
+      const queryName = "BETARENA_CACHE_FIXTURES_ODDS_DATA_T";
+      const response: unknown = await fn.apply(this, arguments);
+      const t1 = performance.now();
+      const msg = `${queryName} completed in: ${(t1 - t0) / 1000} sec`
+      console.log(msg)
+      return response;
+    } catch(ex){
+      throw new Error(ex);
+    }
+  };
+  
+  // const t0 = performance.now();
+  // const queryName = "BETARENA_CACHE_FIXTURES_ODDS_DATA_T";
+
+  // const response: B_H_HF_FO_Q = await initGrapQLClient.request(
+  //   BETARENA_CACHE_FIXTURES_ODDS_DATA_T
+  // );
+
+  // const t1 = performance.now();
+  // logs.push(`${queryName} completed in: ${(t1 - t0) / 1000} sec`);
+}

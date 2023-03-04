@@ -1,5 +1,6 @@
 import { GraphQLClient } from "graphql-request";
-import { GET_HREFLANG_DATA } from "../graphql/query.common.js";
+import { B_H_SFSD } from "../../types/hasura.js";
+import { CURRENT_SEASON_IDS, GET_HREFLANG_DATA } from "../graphql/query.common.js";
 
 /**
  * @description [GRAPH-QL] [GET] obtains target platform
@@ -17,4 +18,27 @@ export async function getHrefLang (
   // [ℹ] push "EN", as not included
   langArray.push('en')
   return langArray;
+}
+
+/**
+ * @description obtain target current season_id's
+ * @param {GraphQLClient} initGrapQLClient
+ * @returns Promise < B_H_SFSD[] >
+ */
+export async function get_current_seasons (
+  initGrapQLClient: GraphQLClient,
+): Promise < B_H_SFSD[] > {
+
+  // const t0 = performance.now();
+  // const queryName = "REDIS_CACHE_FIXTURES_ODDS_DATA_0";
+  const response: 
+  {
+    scores_football_seasons_details: B_H_SFSD[]
+  } = await initGrapQLClient.request (
+    CURRENT_SEASON_IDS
+  );
+  // const t1 = performance.now();
+  // logs.push(`${queryName} completed in: ${(t1 - t0) / 1000} sec`);
+
+  return response.scores_football_seasons_details;
 }

@@ -19,6 +19,11 @@ import { gql } from 'graphql-request';
 
 // <⬇️-type-queries-below-⬇️>
 
+/**
+ * @description [GET] GraphQl Query ALL available
+ * HREF-LANG
+ * Cache (TTL:300);
+ */
 export const GET_HREFLANG_DATA = gql`
   query GET_HREFLANG_DATA 
   @cached
@@ -27,6 +32,28 @@ export const GET_HREFLANG_DATA = gql`
     scores_hreflang {
       hreflang
       link
+    }
+  }
+`;
+
+/**
+ * @description [GET] GraphQl Query target seasons
+ * that are of type "is_current_season";
+ * Cache (TTL:300);
+ */
+export const CURRENT_SEASON_IDS = gql`
+  query CURRENT_SEASON_IDS 
+  @cached 
+  (ttl: 300)
+  {
+    scores_football_seasons_details (
+      where: {
+        is_current_season: {
+          _eq: true
+        }
+      }
+    ) {
+      id
     }
   }
 `;

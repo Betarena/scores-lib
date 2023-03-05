@@ -1928,7 +1928,7 @@ export interface BETARENA_HASURA_links_map {
 /**
  * [ℹ] HASURA: scores_fixture_probabilities_translations (&)
  */
-export interface BETARENA_HASURA_scores_fixture_probabilities_translations {
+export interface B_H_SFPT {
 	lang?: string;
 	data?: FixtureProbabilitiesDataTranslation;
 }

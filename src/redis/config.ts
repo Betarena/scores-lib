@@ -23,4 +23,8 @@ export const TP_C_T_A = "tournament_top_player_t"
 export const FS_C_D_A = "scoreboard_data"
 export const FS_C_T_A = "scoreboard_trans"
 
+// [ℹ] Fixture Probabilities (Widget)
+// export const PR_C_D_A = "null" // TODO: - not implemented
+export const PR_C_T_A = "fixture_prob_trans"
+
 //#endregion [PAGE] FIXTURE

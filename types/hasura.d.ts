@@ -1961,7 +1961,7 @@ export interface FixtureProbabilitiesDataTranslation {
 /**
  * [ℹ] HASURA: football_h2h (&)
  */
-export interface BETARENA_HASURA_football_h2h {
+export interface B_H_FH2H {
 	team_ids?: string;
 	data?: WelcomeData;
 	last_5_data?: WelcomeData[];
@@ -1987,7 +1987,7 @@ export interface football_h2h_WINSDraws {
 /**
  * [ℹ] HASURA: scores_fixtures_h2h_translations (&)
  */
-export interface BETARENA_HASURA_scores_fixtures_h2h_translations {
+export interface B_H_SFH2HT {
 	lang?: string;
 	translations?: h2h_Translations;
 }

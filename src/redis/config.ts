@@ -24,7 +24,8 @@ export const FS_C_D_A = "scoreboard_data"
 export const FS_C_T_A = "scoreboard_trans"
 
 // [ℹ] Fixture Probabilities (Widget)
-// export const PR_C_D_A = "null" // TODO: - not implemented
+// IMPORTANTTODO: - (data) not implemented
+// export const PR_C_D_A = "null"
 export const PR_C_T_A = "fixture_prob_trans"
 
 // [ℹ] Fixture Statistics (Widget)
@@ -38,5 +39,10 @@ export const LIN_C_T_A = "fixture_lineups_trans"
 // [ℹ] Fixture Incidents (Widget)
 export const INC_C_D_A = "fixture_incidents_data"
 export const INC_C_T_A = "fixture_incidents_trans"
+
+// [ℹ] Fixture Head-2-Head (Widget)
+// IMPORTANTTODO: - (data) not implemented
+export const H2H_C_D_A = "null"
+export const H2H_C_T_A = "fixture_incidents_trans"
 
 //#endregion [PAGE] FIXTURE

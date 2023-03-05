@@ -1770,7 +1770,7 @@ export interface B_H_SFST {
 /**
  * [ℹ] HASURA: scores_fixture_lineup_translations (&)
 */
-export interface BETARENA_HASURA_scores_fixture_lineup_translations {
+export interface B_H_SFLT {
   lang?:         string;
   translations?: FixtureLineupTranslations;
 } export interface FixtureLineupTranslations {

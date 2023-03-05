@@ -31,4 +31,8 @@ export const PR_C_T_A = "fixture_prob_trans"
 export const ST_C_D_A = "fixture_statistics_data"
 export const ST_C_T_A = "fixture_statistics_trans"
 
+// [ℹ] Fixture Lineups (Widget)
+export const LIN_C_D_A = "fixture_lineups_data"
+export const LIN_C_T_A = "fixture_lineups_trans"
+
 //#endregion [PAGE] FIXTURE

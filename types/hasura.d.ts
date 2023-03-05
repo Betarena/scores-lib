@@ -1834,7 +1834,7 @@ export interface B_H_SFST_2 {
 /**
  * [ℹ] HASURA: external_content (&)
 */
-export interface BETARENA_HASURA_external_content {
+export interface B_H_EC {
   id?:             number;
   source?:         Source;
   title?:          string;
@@ -1872,7 +1872,7 @@ export interface BETARENA_HASURA_scores_fixture_about_translations {
 /**
  * [ℹ] HASURA: scores_fixtures_content_translations (&)
 */
-export interface BETARENA_HASURA_scores_fixtures_content_translations {
+export interface B_H_SFCT {
   lang?:         string;
   translations?: FixtureContentTranslations;
 } export interface FixtureContentTranslations {

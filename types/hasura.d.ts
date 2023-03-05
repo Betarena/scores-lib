@@ -1781,7 +1781,7 @@ export interface B_H_SFLT {
 /**
  * [ℹ] HASURA: scores_incidents_translations (&)
 */
-export interface BETARENA_HASURA_scores_incidents_translations {
+export interface B_H_SIT {
   lang?:         string;
   translations?: IncidentsTranslations;
 } export interface IncidentsTranslations {

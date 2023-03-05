@@ -35,4 +35,8 @@ export const ST_C_T_A = "fixture_statistics_trans"
 export const LIN_C_D_A = "fixture_lineups_data"
 export const LIN_C_T_A = "fixture_lineups_trans"
 
+// [ℹ] Fixture Incidents (Widget)
+export const INC_C_D_A = "fixture_incidents_data"
+export const INC_C_T_A = "fixture_incidents_trans"
+
 //#endregion [PAGE] FIXTURE

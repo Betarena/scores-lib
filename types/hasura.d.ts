@@ -1862,7 +1862,7 @@ export interface B_H_EC {
 /**
  * [ℹ] HASURA: scores_fixture_about_translations (&)
 */
-export interface BETARENA_HASURA_scores_fixture_about_translations {
+export interface B_H_SFAT {
   lang?:         string;
   translations?: FixtureAboutTranslations;
 } export interface FixtureAboutTranslations {

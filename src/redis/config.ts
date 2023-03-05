@@ -49,4 +49,8 @@ export const H2H_C_T_A = "fixture_incidents_trans"
 export const CONT_C_D_A = "fixture_content_data"
 export const CONT_C_T_A = "fixture_content_trans"
 
+// [ℹ] Fixture About (Widget)
+export const ABT_C_D_A = "fixture_about_data"
+export const ABT_C_T_A = "fixture_about_trans"
+
 //#endregion [PAGE] FIXTURE

@@ -129,21 +129,42 @@ export const B_C_LIN_F_Q_D1 = gql`
  */
 export const B_C_LIN_F_Q_T = gql`
   query B_C_LIN_F_Q_T 
+  (
+    $langArray: [String!]
+  )
   @cached 
-  (ttl: 300) 
+  (ttl: 300)  
   {
-    player_positions_translations {
+    player_positions_translations (
+			where: { 
+        lang: {
+          _in: $langArray 
+        } 
+      }
+    ) {
       lang
       position
     }
-    scores_general_translations {
+    scores_general_translations (
+			where: { 
+        lang: {
+          _in: $langArray 
+        } 
+      }
+    ) {
       lang
       countries
       widgets_no_data_available
       weekdays
       months
     }
-    scores_fixture_lineup_translations {
+    scores_fixture_lineup_translations (
+			where: { 
+        lang: {
+          _in: $langArray 
+        } 
+      }
+    ) {
       lang
       translations
     }

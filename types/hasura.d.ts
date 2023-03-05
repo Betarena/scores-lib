@@ -1792,7 +1792,7 @@ export interface BETARENA_HASURA_scores_incidents_translations {
 /**
  * [ℹ] HASURA: scores_fixture_stats_translations (&)
 */
-export interface BETARENA_HASURA_scores_fixture_stats_translations {
+export interface B_H_SFST_2 {
   lang?:         string;
   translations?: FixtureStatsTranslations;
 } export interface FixtureStatsTranslations {

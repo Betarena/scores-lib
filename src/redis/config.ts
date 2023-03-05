@@ -27,4 +27,8 @@ export const FS_C_T_A = "scoreboard_trans"
 // export const PR_C_D_A = "null" // TODO: - not implemented
 export const PR_C_T_A = "fixture_prob_trans"
 
+// [ℹ] Fixture Statistics (Widget)
+export const ST_C_D_A = "fixture_statistics_data"
+export const ST_C_T_A = "fixture_statistics_trans"
+
 //#endregion [PAGE] FIXTURE

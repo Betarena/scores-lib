@@ -1884,7 +1884,7 @@ export interface B_H_SFCT {
 /**
  * [ℹ] HASURA: widget_featured_match_votes (&)
 */
-export interface BETARENA_HASURA_widget_featured_match_votes {
+export interface B_H_WFMV {
 	match_id?:         number;
 	vote_draw_x?:      number;
 	vote_win_local?:   number;
@@ -1894,7 +1894,7 @@ export interface BETARENA_HASURA_widget_featured_match_votes {
 /**
  * [ℹ] HASURA: scores_fixture_voting_translations (&)
 */
-export interface BETARENA_HASURA_scores_fixture_voting_translations {
+export interface B_H_SFVT {
   lang?:         string;
   translations?: FixtureVotesTranslations;
 } export interface FixtureVotesTranslations {

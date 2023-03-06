@@ -53,4 +53,8 @@ export const CONT_C_T_A = "fixture_content_trans"
 export const ABT_C_D_A = "fixture_about_data"
 export const ABT_C_T_A = "fixture_about_trans"
 
+// [ℹ] Fixture Votes (Widget)
+export const VOT_C_D_A = "fixture_votes_data"
+export const VOT_C_T_A = "fixture_votes_trans"
+
 //#endregion [PAGE] FIXTURE

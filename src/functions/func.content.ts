@@ -4,7 +4,7 @@
 import { GraphQLClient } from "graphql-request";
 import { B_CONT_T, B_H_CONT_Q } from "../../types/content";
 import { B_H_EC, B_H_HF } from "../../types/hasura";
-import { B_C_CONT_F_Q_D0, B_C_CONT_F_Q_D1, B_C_CONT_F_Q_D2, B_C_CONT_F_Q_T } from "../graphql/query.content";
+import { B_C_CONT_F_Q_D0, B_C_CONT_F_Q_D1, B_C_CONT_F_Q_D2, B_C_CONT_F_Q_T } from "../graphql/query.content.js";
 
 //#endregion IMPORTS
 

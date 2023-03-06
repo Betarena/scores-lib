@@ -4,8 +4,8 @@
 
 import { GraphQLClient } from "graphql-request";
 import { B_H_LEG_Q, B_LEG_D } from "../../types/league-info";
-import { B_C_LEG_T_Q_D0, B_C_LEG_T_Q_D1, B_C_LEG_T_Q_D2 } from "../graphql/query.league-info";
-import { removeDiacritics } from "../util/util.language";
+import { B_C_LEG_T_Q_D0, B_C_LEG_T_Q_D1, B_C_LEG_T_Q_D2 } from "../graphql/query.league-info.js";
+import { removeDiacritics } from "../util/util.language.js";
 
 //#region [METHODS]
 // <⬇️-add-methods-below-⬇️>

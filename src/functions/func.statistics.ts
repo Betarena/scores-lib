@@ -4,7 +4,7 @@
 import { GraphQLClient } from "graphql-request";
 import { B_H_HF } from "../../types/hasura";
 import { B_H_ST_Q, B_H_ST_SJ_HF, B_ST_T, ST_Fixture, ST_Incident_Team } from "../../types/statistics";
-import { B_C_STAT_F_Q_D0, B_C_STAT_F_Q_D2, B_C_STAT_F_Q_T } from "../graphql/query.statistics";
+import { B_C_STAT_F_Q_D0, B_C_STAT_F_Q_D2, B_C_STAT_F_Q_T } from "../graphql/query.statistics.js";
 
 //#endregion IMPORTS
 

@@ -3,7 +3,7 @@
 
 import { GraphQLClient } from "graphql-request";
 import { B_H_VOT_Q, B_H_VOT_SJ_HF, B_VOT_T, VOT_Fixture } from "../../types/votes";
-import { B_C_VOT_F_Q_D1, B_C_VOT_F_Q_T } from "../graphql/query.votes";
+import { B_C_VOT_F_Q_D1, B_C_VOT_F_Q_T } from "../graphql/query.votes.js";
 
 //#endregion IMPORTS
 

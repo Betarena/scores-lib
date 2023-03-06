@@ -4,7 +4,7 @@
 import { GraphQLClient } from "graphql-request";
 import { ABT_Fixture, B_ABT_T, B_H_ABT_Q } from "../../types/about";
 import { B_H_HF } from "../../types/hasura";
-import { B_C_ABT_F_Q_D0, B_C_ABT_F_Q_D1, B_C_ABT_F_Q_T } from "../graphql/query.about";
+import { B_C_ABT_F_Q_D0, B_C_ABT_F_Q_D1, B_C_ABT_F_Q_T } from "../graphql/query.about.js";
 
 //#endregion IMPORTS
 

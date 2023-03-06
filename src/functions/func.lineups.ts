@@ -4,7 +4,7 @@
 import { GraphQLClient } from "graphql-request";
 import { B_H_HF } from "../../types/hasura";
 import { B_H_LIN_Q, B_H_LIN_SJ_HF, B_H_LIN_SJ_SFP, B_LIN_T, LIN_Fixture, LIN_Player, LIN_Sub_Player, LIN_Team_Lineup } from "../../types/lineups";
-import { B_C_LIN_F_Q_D0, B_C_LIN_F_Q_D1, B_C_LIN_F_Q_D2, B_C_LIN_F_Q_T } from "../graphql/query.lineups";
+import { B_C_LIN_F_Q_D0, B_C_LIN_F_Q_D1, B_C_LIN_F_Q_D2, B_C_LIN_F_Q_T } from "../graphql/query.lineups.js";
 
 //#endregion IMPORTS
 

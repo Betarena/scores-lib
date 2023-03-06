@@ -3,7 +3,7 @@
 
 import { GraphQLClient } from "graphql-request";
 import { B_H_PR_Q, B_H_PR_SJ_HF, B_PR_T } from "../../types/probabilities";
-import { B_C_PROB_F_Q_D0, B_C_PROB_F_Q_T } from "../graphql/query.probabilities";
+import { B_C_PROB_F_Q_D0, B_C_PROB_F_Q_T } from "../graphql/query.probabilities.js";
 
 //#endregion IMPORTS
 

@@ -1053,7 +1053,7 @@ export interface B_H_SD {
 /**
  * [ℹ] HASURA: scores_widget_league_info_translations (&)
 */
-export interface BETARENA_HASURA_scores_widget_league_info_translations {
+export interface B_H_SWLIT {
   data?: DataLang;
   lang?: string;
 } export interface DataLang {
@@ -1690,7 +1690,7 @@ export interface B_H_SLFT {
 /**
  * [ℹ] HASURA: widget_league_info_translations (&)
 */
-export interface BETARENA_HASURA_widget_league_info_translations {
+export interface B_H_WLIT {
   lang?: string;
   data?: WidgetLeagueInfo2Data;
 } export interface WidgetLeagueInfo2Data {
@@ -1705,7 +1705,7 @@ export interface BETARENA_HASURA_widget_league_info_translations {
 /**
  * [ℹ] HASURA: scores_widget_tournament_about_translations (&)
 */
-export interface BETARENA_HASURA_scores_widget_tournament_about_translations {
+export interface B_H_SWTAT {
   lang?: string;
   data?: WidgetTournamentAboutData;
 } export interface WidgetTournamentAboutData {

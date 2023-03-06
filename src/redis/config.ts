@@ -20,6 +20,9 @@ export const TP_C_T_A = "tournament_top_player_t"
 export const STA_C_D_A = "tournament_standings_data"
 export const STA_C_T_A = "tournament_standings_t"
 
+// [ℹ] League Info (Widget)
+export const LEG_C_D_A = "league_info"
+
 //#endregion [PAGE] TOURNAMENT (LEAGUE)
 
 //#region [PAGE] FIXTURE

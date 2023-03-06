@@ -11,9 +11,14 @@ export const LS2_C_S_A = 'livescores_v2_seo';
 // [ℹ] Fixture Odds (Widget)
 export const FO_C_D_A = "tour_fix_odds_data"
 export const FO_C_T_A = "tour_fix_odds_t"
+
 // [ℹ] Top Players (Widget)
 export const TP_C_D_A = "tournament_top_players_data"
 export const TP_C_T_A = "tournament_top_player_t"
+
+// [ℹ] Standings Players (Widget)
+export const STA_C_D_A = "tournament_standings_data"
+export const STA_C_T_A = "tournament_standings_t"
 
 //#endregion [PAGE] TOURNAMENT (LEAGUE)
 

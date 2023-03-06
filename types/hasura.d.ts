@@ -79,7 +79,7 @@ export interface BETARENA_HASURA_scores_seo_block_homepage {
 /**
  * [ℹ] HASURA: scores_football_standings (&)
 */
-export interface BETARENA_HASURA_scores_football_standings {
+export interface B_H_SFS {
   league_id?: number;
   data?:      StandingsHistDatum[];
   name?:      string;
@@ -91,7 +91,7 @@ export interface BETARENA_HASURA_scores_football_standings {
 /**
  * [ℹ] HASURA: scores_football_standings_history (&)
 */
-export interface BETARENA_HASURA_scores_football_standings_history {
+export interface B_H_SFSH {
   league_id?: number;
   data?:      StandingsHistDatum[];
   name?:      string;
@@ -172,7 +172,7 @@ export interface BETARENA_HASURA_scores_football_standings_history {
 /**
  * [ℹ] HASURA: scores_team_statistics (&)
 */
-export interface BETARENA_HASURA_scores_team_statistics {
+export interface B_H_STS {
   average_goals?:        AverageGoals;
   average_yellow_cards?: number;
   data?:                 Datum[];
@@ -247,7 +247,7 @@ export interface BETARENA_HASURA_scores_team_statistics {
  * [ℹ] HASURA: scores_team_statistics_history (&)
  * [ℹ] based-of: scores_team_statistics (&)
 */
-export interface BETARENA_HASURA_scores_team_statistics_history {
+export interface B_H_STSH {
   average_goals?:        AverageGoals;
   average_yellow_cards?: number;
   data?:                 Datum[];
@@ -259,7 +259,7 @@ export interface BETARENA_HASURA_scores_team_statistics_history {
 /**
  * [ℹ] HASURA: scores_widget_standings_translations (&)
 */
-export interface BETARENA_HASURA_scores_widget_standings_translations {
+export interface B_H_SWST {
   lang?:         string;
   translations?: Translations;
 } export interface Translations {
@@ -315,7 +315,7 @@ export interface B_H_SFT {
 /**
  * [ℹ] HASURA: color_codes_league_standings_positions (&)
 */
-export interface BETARENA_HASURA_color_codes_league_standings_positions {
+export interface B_H_CCLSP {
   color_codes?: ColorCodes;
   sports?:      string;
 } export interface ColorCodes {

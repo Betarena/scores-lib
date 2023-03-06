@@ -4,7 +4,7 @@
 import { GraphQLClient } from "graphql-request";
 import { B_H_STSH, PurpleDatumHist } from "../../types/hasura";
 import { B_H_STA_Q, B_STA_D, B_STA_T, STA_Groups, STA_Team } from "../../types/standings";
-import { B_C_STA_T_Q_D0, B_C_STA_T_Q_T } from "../graphql/query.standings";
+import { B_C_STA_T_Q_D0, B_C_STA_T_Q_D2, B_C_STA_T_Q_T } from "../graphql/query.standings";
 
 //#endregion IMPORTS
 
@@ -17,7 +17,7 @@ import { B_C_STA_T_Q_D0, B_C_STA_T_Q_T } from "../graphql/query.standings";
  * @param {B_H_STA_Q} data 
  * @returns Promise < B_STA_D[] >
  */
-export async function VOT_F_data_main (
+export async function STA_F_data_main (
   response: B_H_STA_Q
 ): Promise < B_STA_D[] > {
 
@@ -790,6 +790,142 @@ export async function STA_T_get_all_standings_data (
 
 	const response: B_H_STA_Q = await initGrapQLClient.request (
     B_C_STA_T_Q_D0
+  );
+
+  // const t1 = performance.now();
+  // logs.push(`${queryName} completed in: ${(t1 - t0) / 1000} sec`);
+
+  return response;
+}
+
+/**
+ * @description [QUERY] method for getting
+ * translation data for the Complete Standings Data (widget);
+ * @version 1.0
+ * @param {GraphQLClient} initGrapQLClient 
+ * @returns Promise < B_H_STA_Q >
+ */
+export async function STA_T_get_target_leagues (
+  initGrapQLClient: GraphQLClient,
+  leagueIdsArr: number[]
+): Promise < B_H_STA_Q > {
+
+  // const t0 = performance.now();
+  // const queryName = "REDIS_CACHE_TOURNAMENT_STANDINGS_DATA_0";
+
+  const VARIABLES = {
+    leagueIdsArr
+  }
+	const response: B_H_STA_Q = await initGrapQLClient.request (
+    B_C_STA_T_Q_D0,
+    VARIABLES
+  );
+
+  // const t1 = performance.now();
+  // logs.push(`${queryName} completed in: ${(t1 - t0) / 1000} sec`);
+
+  return response;
+}
+
+/**
+ * @description [QUERY] method for getting
+ * translation data for the Complete Standings Data (widget);
+ * @version 1.0
+ * @param {B_H_STA_Q} data 
+ * @returns Promise < number[] >
+ */
+export async function STA_T_generate_target_teams_ids (
+  data: B_H_STA_Q
+): Promise < number[] > {
+
+  let teamIdsArr = []
+
+  // [ℹ] obtain all target teams
+  for (const league of data.scores_football_leagues) {
+    for (const season_main of league.seasons) {
+
+      let season_standings_teams_list: PurpleDatumHist[] = [];
+
+      const season_standings = 
+        season_main.is_current_season == true
+        ? data.scores_football_standings
+          .find(( { league_id } ) =>
+            league_id === league.id
+          ) // [ℹ] contains only ONE (current) season PER league [1:1]
+        : data.scores_football_standings_history
+          .find(( { league_id, season_id } ) => 
+            league_id === season_main.league_id 
+            && season_id === season_main.id
+          ) // [ℹ] contains MANY seasons PER league [X:1]
+      ;
+
+      if (season_standings == undefined) {
+        continue
+      }
+
+      // [ℹ] check for multi-part
+      // [ℹ] NOTE: entirely different method
+      if (season_standings?.multipart) {
+        // [ℹ] ignore the seasons with the complex
+        // [ℹ] type:group => type:stage => teams[]
+        // [ℹ] structure
+        if (season_standings?.data[0]?.standings?.data[0]?.standings) {
+          console.log(`complex season standing ${season_main.id}`)
+          // NOTE: IGNORE
+          continue
+        }
+
+        const season_standing_groups_arr = season_standings?.data;
+
+        for (const season_standing_group of season_standing_groups_arr) {
+          for (const season_group_team of season_standing_group.standings.data) {
+            teamIdsArr.push(season_group_team.team_id)
+          }
+        }
+      }
+      // [ℹ] non-multi-part season 
+      // [ℹ] data pre-processing
+      else {
+        season_standings_teams_list = season_standings?.data[0]?.standings?.data;
+        if (season_standings_teams_list == undefined) {
+          console.log(`Standard Season. Undefiend Team Info! leagueID: ${league.id}`, `seasonID: ${season_main.id}`)
+          continue;
+        }
+        teamIdsArr = teamIdsArr.concat(season_standings_teams_list.map(a => a.team_id));
+      }
+    }
+  }
+
+  teamIdsArr = teamIdsArr.filter(element => {
+    return element !== undefined
+  });
+  teamIdsArr = [...new Set(teamIdsArr)]
+  // logs.push(`num. of teamIdsArr: ${teamIdsArr.length}`);
+
+  return teamIdsArr
+}
+
+/**
+ * @description [QUERY] method for getting
+ * translation data for the Complete Standings Data (widget);
+ * @version 1.0
+ * @param {GraphQLClient} initGrapQLClient 
+ * @returns Promise < B_H_STA_Q >
+ */
+export async function STA_T_get_teams_data (
+  initGrapQLClient: GraphQLClient,
+  teamIdsArr: number[]
+): Promise < B_H_STA_Q > {
+
+  // const t0 = performance.now();
+  // const queryName = "REDIS_CACHE_TOURNAMENT_STANDINGS_DATA_0";
+
+  const VARIABLES = {
+    teamIdsArr
+  }
+	const response: B_H_STA_Q = await initGrapQLClient.request (
+    B_C_STA_T_Q_D2,
+    VARIABLES
   );
 
   // const t1 = performance.now();

@@ -1,5 +1,8 @@
 //#region [_MAIN_]
 
+// [ℹ] Navbar (Widget)
+export const NAV_C_T_A = "navbar_t"
+
 // [ℹ] Sportbook Details (Widget)
 export const SPD_C_D_A = "sportbook_details"
 export const SPD_C_D_A1 = "sportbook_details_all"

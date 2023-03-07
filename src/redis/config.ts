@@ -1,5 +1,14 @@
+//#region [_MAIN_]
+
+// [ℹ] Sportbook Details (Widget)
+export const SPD_C_D_A = "sportbook_details"
+export const SPD_C_D_A1 = "sportbook_details_all"
+
+//#endregion [_MAIN_]
+
 //#region [PAGE] HOME
 
+// [ℹ] Lievscores (V2) (Widget)
 export const LS2_C_D_A = 'livescores_v2_data';
 export const LS2_C_T_A = 'livescores_v2_tran';
 export const LS2_C_S_A = 'livescores_v2_seo';

@@ -84,22 +84,6 @@ export const B_C_LEG_T_Q_D0 = gql`
 `;
 
 /**
- * [ℹ] Tournaments / Fixtures_Odds Widget (MAIN)
- * [ℹ] Sportbook Details Data
-*/
-export const REDIS_CACHE_LEAGUE_INFO_DATA_2 = gql`
-  query REDIS_CACHE_LEAGUE_INFO_DATA_2 
-  @cached 
-  (ttl: 300) 
-  {
-    sportsbook_details {
-      data
-      lang
-    }
-  }
-`;
-
-/**
  * [ℹ] ABOUT WIDGET CHECK POPULATION 
  * [ℹ] format date: "yyyy-MM-dd"
 */

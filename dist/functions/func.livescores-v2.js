@@ -33,6 +33,8 @@ export async function generate_historic_fixtures_day_group_map(h_fixtures_arr) {
     // NOTE: (fixture_day, fixture[])
     // t0 = performance.now();
     for (const h_fixture of h_fixtures_arr) {
+        const home_team_id = h_fixture?.localteam_id_j;
+        const away_team_id = h_fixture?.visitorteam_id_j;
         // [ℹ] generate fixture (data) object
         const FIXTURE_DATA = {
             id: h_fixture?.id,
@@ -41,11 +43,13 @@ export async function generate_historic_fixtures_day_group_map(h_fixtures_arr) {
             teams: {
                 home: {
                     name: h_fixture?.home_team_name,
-                    score: h_fixture?.scores_j?.localteam_score
+                    score: h_fixture?.scores_j?.localteam_score,
+                    red_cards: h_fixture?.stats_j?.data?.find(({ team_id }) => team_id === home_team_id)?.redcards || null
                 },
                 away: {
                     name: h_fixture?.away_team_name,
-                    score: h_fixture?.scores_j?.visitorteam_score
+                    score: h_fixture?.scores_j?.visitorteam_score,
+                    red_cards: h_fixture?.stats_j?.data?.find(({ team_id }) => team_id === away_team_id)?.redcards || null
                 }
             },
             time: h_fixture?.time,

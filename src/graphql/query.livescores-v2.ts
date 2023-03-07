@@ -41,6 +41,7 @@ export const BETARENA_CACHE_LIVESCORES_V2_DATA_0 = gql`
       localteam_id_j: data(path: "$.localteam_id")
       visitorteam_id_j: data(path: "$.visitorteam_id")
       scores_j: data(path: "$.scores")
+      stats_j: data(path: "$.stats")
     }
   }
 `;

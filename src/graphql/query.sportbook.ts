@@ -8,7 +8,8 @@ import { B_H_SD } from '../../types/hasura';
 
 /**
  * @description [QUERY] - obtains all
- * sportbook-details data for all geo-pos;
+ * sportbook-details data for all geo-pos from
+ * the Hasura DB;
  * @todo - needs a modified and hybrid approach to
  * handle single request for fallback (frontend)
  * fallbacks

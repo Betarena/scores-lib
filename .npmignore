@@ -3,3 +3,4 @@ tsconfig.json
 .vscode/
 package-lock.json
 src/*
+.DS_Store

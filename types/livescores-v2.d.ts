@@ -1,4 +1,4 @@
-import { FIXTURE_STATUS_TYPES } from "../src/api/sportmonks";
+import { FIXTURE_STATUS_TYPES } from "../src/api/sportmonks.js";
 import type {
   B_H_HF,
   B_H_LFC,

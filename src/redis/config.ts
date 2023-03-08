@@ -10,6 +10,16 @@ export const FOT_C_T_A = "footer_t"
 export const SPD_C_D_A = "sportbook_details"
 export const SPD_C_D_A1 = "sportbook_details_all"
 
+// [ℹ] SEO & Pages (SEO/Valid-Pages)
+export const SAP_C_D_A0 = "sitemap"
+export const SAP_C_D_A1 = "homepage_seo"
+export const SAP_C_D_A2 = "tournaments_seo"
+export const SAP_C_D_A3 = "tournaments_page_info"
+export const SAP_C_D_A4 = "fixtures_seo"
+export const SAP_C_D_A5 = "fixtures_page_info"
+export const SAP_C_D_A6 = "general_sport_translations"
+export const SAP_C_D_A7 = "general_country_translations"
+
 //#endregion [_MAIN_]
 
 //#region [PAGE] HOME

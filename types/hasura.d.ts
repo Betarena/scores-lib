@@ -6,7 +6,7 @@
 /**
  * [ℹ] HASURA: [EVENT] update_fixture_sitemap
 */
-export interface BETARENA_HASURA_EVENT_update_fixture_sitemap {
+export interface B_H_EV_U_FS {
   data?:  UpdateFixturesData;
   table?: Table;
 } export interface UpdateFixturesData {
@@ -21,7 +21,7 @@ export interface BETARENA_HASURA_EVENT_update_fixture_sitemap {
 /**
  * [ℹ] HASURA: scores_hreflang (&)
 */
-export interface BETARENA_HASURA_scores_hreflang {
+export interface B_H_SH {
   link?:     string
   hreflang?: string
 }
@@ -29,11 +29,11 @@ export interface BETARENA_HASURA_scores_hreflang {
 /**
  * [ℹ] HASURA: scores_seo_homepage (&)
 */
-export interface BETARENA_HASURA_scores_seo_homepage {
-  lang:         string
-  main_data:    Main_Data
-  twitter_card: Twitter_Data
-  opengraph:    Opengraph_Data
+export interface B_H_SSH {
+  lang?:         string
+  main_data?:    Main_Data
+  twitter_card?: Twitter_Data
+  opengraph?:    Opengraph_Data
 } interface Main_Data {
   canonical:    string
   noindex:      boolean
@@ -60,11 +60,11 @@ export interface BETARENA_HASURA_scores_seo_homepage {
 /**
  * [ℹ] HASURA: scores_seo_tournaments (&)
 */
-export interface BETARENA_HASURA_scores_seo_tournaments {
-  lang:         string
-  main_data:    Main_Data
-  twitter_card: Twitter_Data
-  opengraph:    Opengraph_Data
+export interface B_H_SST {
+  lang?:         string
+  main_data?:    Main_Data
+  twitter_card?: Twitter_Data
+  opengraph?:    Opengraph_Data
 }
 
 /**
@@ -1715,7 +1715,7 @@ export interface B_H_SWTAT {
 /**
  * [ℹ] HASURA: scores_endpoints_translations (&)
 */
-export interface BETARENA_HASURA_scores_endpoints_translations {
+export interface B_H_SET {
   countries_translation?: { [key: string]: string };
   lang?:                  string;
   sport?:                 string;
@@ -1730,7 +1730,7 @@ export interface BETARENA_HASURA_scores_endpoints_translations {
 /**
  * [ℹ] HASURA: scores_seo_fixtures (&)
 */
-export interface BETARENA_HASURA_scores_seo_fixtures {
+export interface B_H_SSF {
   lang?:         string;
   main_data?:    Main_Data;
   opengraph?:    FixturesOpengraph;
@@ -1910,7 +1910,7 @@ export interface B_H_SFVT {
 /**
  * [ℹ] HASURA: links_map (&)
 */
-export interface BETARENA_HASURA_links_map {
+export interface B_H_LM {
   url?:        string;
   created_at?: string;
   category?:   string;

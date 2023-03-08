@@ -36,6 +36,10 @@ export const SEB_C_D_A = 'seo_block_t';
 export const LEGT_C_D_A = 'leagues_table_geo';
 export const LEGT_C_T_A = 'leagues_table_t';
 
+// [ℹ] League List (Widget)
+export const LEGL_C_D_A = "league_list_geo"
+export const LEGL_C_T_A = "league_list_t"
+
 //#endregion [PAGE] HOME
 
 //#region [PAGE] TOURNAMENT (LEAGUE)

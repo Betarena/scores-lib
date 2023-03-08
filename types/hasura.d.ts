@@ -1067,7 +1067,7 @@ export interface B_H_SWLIT {
 /**
  * [ℹ] HASURA: scores_league_list (&)
 */
-export interface BETARENA_HASURA_scores_league_list {
+export interface B_H_SLL {
   country_id:     number
   country_name:   string
   image_path:     string
@@ -1090,7 +1090,7 @@ export interface B_H_LFC {
 /**
  * [ℹ] HASURA: scores_leagues_list_translations (&)
 */
-export interface BETARENA_HASURA_scores_leagues_list_translations {
+export interface B_H_SLLT {
   lang: string
   translations: {
     search_form: string

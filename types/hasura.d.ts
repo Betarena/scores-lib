@@ -70,7 +70,7 @@ export interface B_H_SST {
 /**
  * [ℹ] HASURA: scores_seo_block_homepage (&)
 */
-export interface BETARENA_HASURA_scores_seo_block_homepage {
+export interface B_H_SSBH {
   lang:   string
   html:   string
   title:  string

@@ -29,6 +29,9 @@ export const LS2_C_D_A = 'livescores_v2_data';
 export const LS2_C_T_A = 'livescores_v2_tran';
 export const LS2_C_S_A = 'livescores_v2_seo';
 
+// [ℹ] SEO Block (Widget)
+export const SEB_C_D_A = 'seo_block_t';
+
 //#endregion [PAGE] HOME
 
 //#region [PAGE] TOURNAMENT (LEAGUE)

@@ -1165,7 +1165,7 @@ export interface B_H_ST {
 /**
  * [ℹ] HASURA: scores_standings_home_widget_translations (&)
 */
-export interface BETARENA_HASURA_scores_standings_home_widget_translations {
+export interface B_H_SSHWT {
   games: string
   lang: string
   points: string

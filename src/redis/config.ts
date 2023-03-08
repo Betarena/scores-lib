@@ -32,6 +32,10 @@ export const LS2_C_S_A = 'livescores_v2_seo';
 // [ℹ] SEO Block (Widget)
 export const SEB_C_D_A = 'seo_block_t';
 
+// [ℹ] Leagues Table (Widget)
+export const LEGT_C_D_A = 'leagues_table_geo';
+export const LEGT_C_T_A = 'leagues_table_t';
+
 //#endregion [PAGE] HOME
 
 //#region [PAGE] TOURNAMENT (LEAGUE)

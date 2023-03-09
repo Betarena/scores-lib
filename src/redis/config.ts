@@ -40,6 +40,10 @@ export const LEGT_C_T_A = 'leagues_table_t';
 export const LEGL_C_D_A = "league_list_geo"
 export const LEGL_C_T_A = "league_list_t"
 
+// [ℹ] Featured Match (Widget)
+export const FEATM_C_D_A = "featured_match_geo"
+export const FEATM_C_T_A = "featured_match_t"
+
 //#endregion [PAGE] HOME
 
 //#region [PAGE] TOURNAMENT (LEAGUE)

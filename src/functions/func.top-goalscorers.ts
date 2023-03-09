@@ -4,7 +4,7 @@
 
 import { GraphQLClient } from "graphql-request";
 import { B_H_TGOL_Q, B_TGOL_D, TGOL_Goalscorer, TGOL_Translations } from "../../types/top-goalscorers";
-import { B_C_TGOL_M_Q_D0, B_C_TGOL_M_Q_T } from "../graphql/query.top-goalscorers";
+import { B_C_TGOL_M_Q_D0, B_C_TGOL_M_Q_T } from "../graphql/query.top-goalscorers.js";
 
 //#region [METHODS]
 // <⬇️-add-methods-below-⬇️>

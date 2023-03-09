@@ -4,7 +4,7 @@
 import { GraphQLClient } from "graphql-request";
 import { B_H_SGT, B_H_ST } from "../../types/hasura";
 import { B_H_LEGL_Q, B_LEGL_D, B_LEGL_T } from "../../types/league-list";
-import { B_C_LEGL_M_Q_D0, B_C_LEGL_M_Q_T } from "../graphql/query.league-list";
+import { B_C_LEGL_M_Q_D0, B_C_LEGL_M_Q_T } from "../graphql/query.league-list.js";
 
 //#endregion IMPORTS
 

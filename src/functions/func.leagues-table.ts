@@ -5,7 +5,7 @@
 import { GraphQLClient } from "graphql-request";
 import { PurpleDatumHist } from "../../types/hasura";
 import { B_H_LEGT_Q, B_LEGT_D, LEGT_Table, LEGT_Team } from "../../types/leagues-table";
-import { B_C_LEGT_M_Q_D0, B_C_LEGT_M_Q_D1, B_C_LEGT_M_Q_D2 } from "../graphql/query.leagues-table";
+import { B_C_LEGT_M_Q_D0, B_C_LEGT_M_Q_D1, B_C_LEGT_M_Q_D2 } from "../graphql/query.leagues-table.js";
 
 //#region [METHODS]
 // <⬇️-add-methods-below-⬇️>

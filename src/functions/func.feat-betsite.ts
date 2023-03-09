@@ -3,7 +3,7 @@
 
 import { GraphQLClient } from "graphql-request";
 import { B_FEATB_T, B_H_FEATB_Q } from "../../types/feat-betsite";
-import { B_C_FEATB_M_Q_T } from "../graphql/query.feat-betsite";
+import { B_C_FEATB_M_Q_T } from "../graphql/query.feat-betsite.js";
 
 //#endregion IMPORTS
 

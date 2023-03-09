@@ -5,8 +5,8 @@
 import { Database } from "firebase/database"
 import { GraphQLClient } from "graphql-request"
 import { B_FEATM_D, B_FEATM_T, B_H_FEATM_Q, FEATM_ValueBet } from "../../types/feat-match"
-import { FIREBASE_getTargetFixtureOdds, FIREBASE_getTargetGeoSportBookDetails } from "../firebase/firebase.common"
-import { B_C_FEATM_H_Q_D0, B_C_FEATM_H_Q_D1, B_C_FEATM_H_Q_D2, B_C_FEATM_H_Q_T } from "../graphql/query.feat-match"
+import { FIREBASE_getTargetFixtureOdds, FIREBASE_getTargetGeoSportBookDetails } from "../firebase/firebase.common.js"
+import { B_C_FEATM_H_Q_D0, B_C_FEATM_H_Q_D1, B_C_FEATM_H_Q_D2, B_C_FEATM_H_Q_T } from "../graphql/query.feat-match.js"
 
 //#region [METHODS]
 // <⬇️-add-methods-below-⬇️>

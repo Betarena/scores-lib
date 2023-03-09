@@ -44,6 +44,10 @@ export const LEGL_C_T_A = "league_list_t"
 export const FEATM_C_D_A = "featured_match_geo"
 export const FEATM_C_T_A = "featured_match_t"
 
+// [ℹ] Featured Betsite (Widget)
+export const FEATB_C_D_A = "featured_betting_sites_geo"
+export const FEATB_C_T_A = "featured_betting_sites_t"
+
 //#endregion [PAGE] HOME
 
 //#region [PAGE] TOURNAMENT (LEAGUE)

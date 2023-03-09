@@ -68,7 +68,7 @@ export async function FIREBASE_getTargetFixtureOdds (
 	);
 }
 
-export async function  FIREBASE_getTargetGeoSportBookDetails (
+export async function FIREBASE_getTargetGeoSportBookDetails (
   db_real_time: Database,
   lang: string,
   siteName?: string
@@ -113,4 +113,16 @@ export async function  FIREBASE_getTargetGeoSportBookDetails (
 			}
 		});
 	}
+}
+
+export async function FIREBASE_getAllSportbookDetails(
+  db_real_time: Database,
+): Promise < any > {
+  return get(child(ref(db_real_time), `sportsbook_details`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      return snapshot.val()
+    } else {
+      return;
+    }
+  })
 }

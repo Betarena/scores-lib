@@ -2077,3 +2077,72 @@ export interface B_H_LSF_V2 {
   league_id?:                  number[];
   featured_livescore_leagues?: number[];
 }
+
+/**
+ * [ℹ] HASURA: auth_translations (&)
+ */
+export interface B_H_AT {
+	lang?: string;
+	translation?: Auth_Translation;
+}
+export interface Auth_Translation {
+	or?: string;
+	inbox?: string;
+	login?: string;
+	err_msg?: string[];
+	log_out?: string;
+	profile?: string;
+	sign_up?: string;
+	register?: string;
+	email_msg?: string[];
+	no_account?: string;
+	processing?: string;
+	success_msg?: string[];
+	verification?: string;
+	verify_email?: string;
+	or_web3_login?: string;
+	account_exists?: string;
+	email_continue?: string;
+	or_web3_signup?: string;
+	no_email_verify?: string[];
+	email_verify_sent?: string[];
+}
+
+/**
+ * [ℹ] HASURA: profile_translations (&)
+ */
+export interface B_H_PT {
+	lang?: string;
+	data?: Profile_Translation;
+}
+export interface Profile_Translation {
+	name?: string;
+	save?: string;
+  remove?: string;
+  upload?: string;
+	soon?: string;
+	author?: string;
+	scores?: string;
+	username?: string;
+	dashboard?: string;
+	name_desc?: string;
+	save_photo?: string;
+	crypto_desc?: string;
+	delete_desc?: string;
+	wallet_full?: string;
+	acc_settings?: string;
+	crypto_title?: string;
+	delete_title?: string;
+	delete_button?: string;
+	profile_photo?: string;
+	required_field?: string;
+	dashboard_title?: string;
+	wallet_connected?: string;
+	cancel_expression?: string;
+	profile_photo_desc?: string;
+	delete_account_desc?: string;
+	connect_wallet_title?: string;
+	delete_account_title?: string;
+	disconnect_wallet_title?: string;
+  userame_update_error_msg?: [string, string, string, string, string]
+}

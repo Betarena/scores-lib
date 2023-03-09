@@ -126,3 +126,15 @@ export async function FIREBASE_getAllSportbookDetails(
     }
   })
 }
+
+// DEPRECETAED:
+
+// export async function getAllLiveScoresFootball(): Promise < LiveScore_SEO_Game[] > {
+//   return get(child(ref(db_real), `livescores_table/livescores_today`)).then((snapshot) => {
+//     if (snapshot.exists()) {
+//       return snapshot.val()
+//     } else {
+//       return;
+//     }
+//   })
+// }

@@ -48,6 +48,10 @@ export const FEATM_C_T_A = "featured_match_t"
 export const FEATB_C_D_A = "featured_betting_sites_geo"
 export const FEATB_C_T_A = "featured_betting_sites_t"
 
+// [ℹ] Top Goalscorers (Widget)
+export const TGOL_C_D_A = "best_goalscorer_geo"
+export const TGOL_C_T_A = "best_goalscorer_t"
+
 //#endregion [PAGE] HOME
 
 //#region [PAGE] TOURNAMENT (LEAGUE)

@@ -327,7 +327,7 @@ export async function fixturesGroupByLeague(
 
   // [ℹ] check if overwriting is done;
   if (cacheTargetLeagueData != undefined) {
-    console.log('🔥 Overriding')
+    // console.log('🔥 Overriding')
     historic_fixtures_by_league = cacheTargetLeagueData
   }
   
@@ -634,19 +634,19 @@ export async function merge_weeks_rounds_to_league (
 
     // [ℹ] cont;
     if (key == null) { 
-      console.log(`league_id: ${key}`)
+      // console.log(`league_id: ${key}`)
       continue;
     }
 
     // [ℹ] cont;
     if (value == null || value == undefined) {
-      console.log(`key: ${key}`)
+      // console.log(`key: ${key}`)
       continue;
     }
 
     // [ℹ] cont;
     if (value?.seasons == undefined || value?.seasons == null) {
-      console.log(`league_id: ${key} | season is null`)
+      // console.log(`league_id: ${key} | season is null`)
       continue;
     }
 
@@ -656,7 +656,7 @@ export async function merge_weeks_rounds_to_league (
       const weeks_rounds_data = season_week_round_ranges_map.get(seasonId)
 
       if (weeks_rounds_data?.weeks == undefined ) {
-        console.log(`week value: ${weeks_rounds_data?.weeks}`)
+        // console.log(`week value: ${weeks_rounds_data?.weeks}`)
       }
       
       season_fix_odds = {

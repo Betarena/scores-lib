@@ -52,13 +52,13 @@ export async function LEGL_H_data_main (
         }
 
         if (league_object.top_geo_leagues.length > 7) {
-          console.debug('➤  exiting inner loop', league_object.top_geo_leagues.length)
+          // console.debug('➤  exiting inner loop', league_object.top_geo_leagues.length)
           break;
         }
       }
 
       if (league_object.top_geo_leagues.length > 6) {
-        console.debug('➤  exiting main loop', league_object.top_geo_leagues.length)
+        // console.debug('➤  exiting main loop', league_object.top_geo_leagues.length)
         break;
       }
     }

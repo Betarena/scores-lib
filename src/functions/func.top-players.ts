@@ -44,7 +44,7 @@ export async function getTargetSeasonPlayersInfo(
       offset: offset,
       seasonIds: seasonIdsArr
     }
-    console.log(`ℹ variables: ${VARIABLES.limit} ${VARIABLES.offset}`)
+    // console.log(`ℹ variables: ${VARIABLES.limit} ${VARIABLES.offset}`)
 
     const response: B_H_TP_Q = await initGrapQLClient.request(
       BETARENA_CACHE_TOP_PLAYERS_DATA_0,
@@ -159,14 +159,14 @@ export async function extract_playerId_and_teamId(
     return element !== undefined
   });
 
-  console.log("playerIdsArr (size): " + playerIdsArr.length)
-  console.log("teamIdsArr (size): " + teamIdsArr.length)
+  // console.log("playerIdsArr (size): " + playerIdsArr.length)
+  // console.log("teamIdsArr (size): " + teamIdsArr.length)
 
   playerIdsArr = [...new Set(playerIdsArr)]
   teamIdsArr = [...new Set(teamIdsArr)]
 
-  console.log("playerIdsArr (size) [post]: " + playerIdsArr.length)
-  console.log("teamIdsArr (size) [post]: " + teamIdsArr.length)
+  // console.log("playerIdsArr (size) [post]: " + playerIdsArr.length)
+  // console.log("teamIdsArr (size) [post]: " + teamIdsArr.length)
 
   // logs.push(` ↳ num. of playerIdsArr: ${playerIdsArr.length}`);
   // logs.push(` ↳ num. of teamIdsArr: ${teamIdsArr.length}`);
@@ -234,9 +234,9 @@ export async function generateTeamsAndPlayersMap (
   }
 
   const t1 = performance.now();
-  console.log(`players_map generated with size: ${players_map.size}`)
-  console.log(`teams_map generated with size: ${teams_map.size}`)
-  console.log(`hashmap conversion: ${(t1 - t0) / 1000} sec`);
+  // console.log(`players_map generated with size: ${players_map.size}`)
+  // console.log(`teams_map generated with size: ${teams_map.size}`)
+  // console.log(`hashmap conversion: ${(t1 - t0) / 1000} sec`);
 
   return [
     players_map,

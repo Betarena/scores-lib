@@ -25,7 +25,7 @@ export async function STA_F_data_main (
 
   loop_league: for (const league of response.scores_football_leagues) {
 
-    console.log(`🔼 league: ${league.id}`)
+    // console.log(`🔼 league: ${league.id}`)
     const finalCacheObj: B_STA_D = { }
     finalCacheObj.league_id = league.id;
     finalCacheObj.seasons = []
@@ -79,7 +79,7 @@ export async function STA_F_data_main (
         // [ℹ] type:group => type:stage => teams[]
         // [ℹ] structure
         if (season_standings?.data[0]?.standings?.data[0]?.standings) {
-          console.log(`complex season standing ${season_main.id}`)
+          // console.log(`complex season standing ${season_main.id}`)
           // NOTE: IGNORE
           continue
         }
@@ -275,7 +275,7 @@ export async function STA_F_data_main (
               seasonCurrent
               && team_current_season === season_main.id;
 
-            console.log('team_stats_current_valid', team_stats_current_valid)
+            // console.log('team_stats_current_valid', team_stats_current_valid)
 
             let target_team_stats: B_H_STSH = 
               team_stats_current_valid === true
@@ -433,7 +433,7 @@ export async function STA_F_data_main (
         // [ℹ] no season standings data found in DB 
         // [ℹ] [exit]
         if (season_standings_teams_list == undefined) {
-          console.log(`Season ID: ${season_main.id}`)
+          // console.log(`Season ID: ${season_main.id}`)
           continue
         }
 
@@ -594,7 +594,7 @@ export async function STA_F_data_main (
             seasonCurrent
             && team_current_season === season_main.id;
 
-          console.log('team_stats_current_valid', team_stats_current_valid)
+          // console.log('team_stats_current_valid', team_stats_current_valid)
 
           let target_team_stats: B_H_STSH = 
             team_stats_current_valid === true
@@ -870,7 +870,7 @@ export async function STA_T_generate_target_teams_ids (
         // [ℹ] type:group => type:stage => teams[]
         // [ℹ] structure
         if (season_standings?.data[0]?.standings?.data[0]?.standings) {
-          console.log(`complex season standing ${season_main.id}`)
+          // console.log(`complex season standing ${season_main.id}`)
           // NOTE: IGNORE
           continue
         }
@@ -888,7 +888,7 @@ export async function STA_T_generate_target_teams_ids (
       else {
         season_standings_teams_list = season_standings?.data[0]?.standings?.data;
         if (season_standings_teams_list == undefined) {
-          console.log(`Standard Season. Undefiend Team Info! leagueID: ${league.id}`, `seasonID: ${season_main.id}`)
+          // console.log(`Standard Season. Undefiend Team Info! leagueID: ${league.id}`, `seasonID: ${season_main.id}`)
           continue;
         }
         teamIdsArr = teamIdsArr.concat(season_standings_teams_list.map(a => a.team_id));

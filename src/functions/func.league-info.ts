@@ -144,10 +144,10 @@ export async function LEG_T_data_main (
     // FIXME: not present in the DB "scores_football_leagues"
     // FIXME: but are present in the "scores_tournaments" [?]
     if (league_target == undefined) {
-      console.log(`
-        undefined: ${tournament_id}
-        url: ${url}
-      `)
+      // console.log(`
+      //   undefined: ${tournament_id}
+      //   url: ${url}
+      // `)
       continue;
     }
 

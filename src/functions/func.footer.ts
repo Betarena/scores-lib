@@ -81,8 +81,8 @@ export async function FOT_M_translations_main (
 
     const MERGED_OBJECT_T = {
       ...object,
-      scores_header_fixtures_information: objectT1,
-      scores_header_links: objectT2
+      scores_footer_translations: objectT1,
+      scores_footer_links: objectT2
     }
     fix_odds_translation_map.set(lang_, MERGED_OBJECT_T)
   }

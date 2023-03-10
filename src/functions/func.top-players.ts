@@ -90,7 +90,8 @@ export async function extract_playerId_and_teamId(
   season_details_map: Map<number, B_H_SFSD>
 ): Promise < [number[], number[]]> {
 
-  let teamIdsArr: number[], playerIdsArr: number[] = []
+  let teamIdsArr: number[] = []
+  let playerIdsArr: number[] = []
 
   // -----------
   //#region ALETERNATIVE - ALL [v1]

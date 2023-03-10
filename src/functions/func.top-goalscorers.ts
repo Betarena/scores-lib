@@ -136,9 +136,8 @@ export async function TGOL_H_translations_main (
   const map = new Map <string, TGOL_Translations> ()
   
   // [ℹ] filter and remove unecessary player-data;
-  // @ts-ignore: Unreachable code error
-  const data1 = data.scores_best_goalscorers
-    .map(( { goals, image_path, league_id, logo_path, position, ...rest} ) => {
+  const data1 = data?.scores_best_goalscorers
+    ?.map(( { goals, image_path, league_id, logo_path, position, ...rest } ) => {
     return rest;
   });
 
@@ -147,11 +146,11 @@ export async function TGOL_H_translations_main (
     const data_object: TGOL_Translations = { }
     data_object.lang = lang_
 
-    const objectT1 = data.player_positions_translations
+    const objectT1 = data?.player_positions_translations
       .find(({ lang }) => lang === lang_)
       ?.position
 
-    const objectT2 = data.scores_best_goalscorers_translations
+    const objectT2 = data?.scores_best_goalscorers_translations
       .find(({ lang }) => lang === lang_)
       ?.translations
 

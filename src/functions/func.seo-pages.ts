@@ -60,8 +60,8 @@ export async function SAP_GL_get_published_fixtures (
     offset += limit;
     counter++;
 
-    // NOTE: Temporary
-    // break;
+    // IMPORTANTNOTE: - used for DEV
+    break;
   }
 
   // const t1 = performance.now();
@@ -116,8 +116,8 @@ export async function SAP_GL_get_links_map (
     offset += limit;
     counter++;
 
-    // NOTE: Temporary
-    // break;
+    // IMPORTANTNOTE: - used for DEV
+    break;
   }
 
   // const t1 = performance.now();

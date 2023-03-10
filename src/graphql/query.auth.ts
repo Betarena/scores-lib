@@ -16,8 +16,8 @@ import { B_H_SD } from '../../types/hasura';
  * @version 1.0
  * @returns {B_H_SD[]} B_H_SD[]
  */
-export const B_C_AUTH_M_Q_D0 = gql`
-  query B_C_AUTH_M_Q_D0 
+export const B_C_AUTH_M_Q_T = gql`
+  query B_C_AUTH_M_Q_T 
   (
     $langArray: [String!]
   )

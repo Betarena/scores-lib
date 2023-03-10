@@ -1,7 +1,6 @@
 //#region IMPORTS
 // <imports-go-here>
 
-import { FIXTURE_STATUS_TYPES } from "../src/api/sportmonks";
 import type {
   B_H_HF, B_H_HF_AG,
   B_H_SD,
@@ -20,6 +19,7 @@ import type {
   WelcomeMonths,
   WidgetsNoDataAvailable
 } from "./hasura";
+import { FIXTURE_STATUS_TYPES } from "./sportmonks";
 
 //#endregion IMPORTS
 

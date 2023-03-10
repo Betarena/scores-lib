@@ -27,7 +27,7 @@ export const B_C_AUTH_M_Q_T = gql`
     auth_translations(
 			where: { 
         lang: { 
-          _in: $lang 
+          _in: $langArray 
         } 
       }
 		) {

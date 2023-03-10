@@ -27,42 +27,6 @@ export async function LEGL_getLeagueListQuery (
 
   return response;
 }
-  
-export async function LEGL_obtainLeagueListTranslationMap (
-  data: B_H_LEGL_Q
-): Promise < Map < string, B_H_SGT > > {
-
-  // const t0  = performance.now();
-  
-  const lang_country_map = new Map < string, B_H_SGT > ()
-  for (const t of data.scores_general_translations) {
-    lang_country_map.set(t.lang, t)
-  }
-
-  // const t1 = performance.now();
-  // logs.push(`lang_country_map generated with size: ${lang_country_map.size}`)
-  // logs.push(`hashmap conversion completed in: ${(t1 - t0) / 1000} sec`);
-
-  return lang_country_map
-}
-  
-export async function LEGL_obtainLeagueListTournamentsMap (
-  data: B_H_LEGL_Q
-): Promise < Map < number, B_H_ST > > {
-
-  // const t0  = performance.now();
-
-  const tournament_map = new Map < number, B_H_ST > ()
-  for (const t of data.scores_tournaments) {
-    tournament_map.set(t.tournament_id, t)
-  }
-  
-  // const t1 = performance.now();
-  // logs.push(`tournament_map generated with size: ${tournament_map.size}`)
-  // logs.push(`hashmap conversion completed in: ${(t1 - t0) / 1000} sec`);
-
-  return tournament_map
-}
 
 export async function LEGL_H_data_main (
   response: B_H_LEGL_Q,
@@ -77,6 +41,7 @@ export async function LEGL_H_data_main (
     const league_object: B_LEGL_D = { }
     league_object.geo = geo.lang
     league_object.all_leagues_list = response.scores_league_list
+    league_object.top_geo_leagues = []
 
     // [ℹ] select [TOP-7] leagues
     for (const geo_league of geo.leagues) {
@@ -161,6 +126,43 @@ export async function LEGL_H_get_widget_translations (
   // logs.push(`${queryName} completed in: ${(t1 - t0) / 1000} sec`);
 
   return response;
+}
+
+export async function LEGL_obtainLeagueListTranslationMap (
+  data: B_H_LEGL_Q
+): Promise < Map < string, B_H_SGT > > {
+
+  const lang_country_map = new Map < string, B_H_SGT > ()
+
+  // const t0  = performance.now();
+  
+  for (const t of data.scores_general_translations) {
+    lang_country_map.set(t.lang, t)
+  }
+
+  // const t1 = performance.now();
+  // logs.push(`lang_country_map generated with size: ${lang_country_map.size}`)
+  // logs.push(`hashmap conversion completed in: ${(t1 - t0) / 1000} sec`);
+
+  return lang_country_map
+}
+  
+export async function LEGL_obtainLeagueListTournamentsMap (
+  data: B_H_LEGL_Q
+): Promise < Map < number, B_H_ST > > {
+
+  // const t0  = performance.now();
+
+  const tournament_map = new Map < number, B_H_ST > ()
+  for (const t of data.scores_tournaments) {
+    tournament_map.set(t.tournament_id, t)
+  }
+  
+  // const t1 = performance.now();
+  // logs.push(`tournament_map generated with size: ${tournament_map.size}`)
+  // logs.push(`hashmap conversion completed in: ${(t1 - t0) / 1000} sec`);
+
+  return tournament_map
 }
 
 /**

@@ -2,7 +2,7 @@ import { gql } from 'graphql-request';
 
 // ======================
 // FOR: Featured Match Data
-// TAG: B_C_FEATM_H_Q_<T/D>
+// TAG: B_C_FEATM_H_Q_<T/D(num)>
 // ======================
 
 export const B_C_FEATM_H_Q_D0 = gql`
@@ -125,10 +125,19 @@ export const B_C_FEATM_H_Q_D2 = gql`
 
 export const B_C_FEATM_H_Q_T = gql`
 	query B_C_FEATM_H_Q_T 
+  (
+    $langArray: [String!]
+  )
   @cached
   (ttl: 300) 
   {
-		widget_featured_match_translations {
+		widget_featured_match_translations (
+			where: { 
+        lang: {
+          _in: $langArray 
+        } 
+      }
+    ) {
 			assists
 			bookmaker
 			bet

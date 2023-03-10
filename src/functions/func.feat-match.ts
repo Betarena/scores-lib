@@ -24,8 +24,12 @@ export async function FEATM_get_fixture_all_data (
   initGrapQLClient: GraphQLClient,
   fixtureIds: number[]
 ): Promise < B_H_FEATM_Q > {
-  const VARIABLES = {
-    fixtureIds
+  const VARIABLES: {
+    fixtureIds: number[]
+    fixtureIds_2: number[]
+  } = {
+    fixtureIds,
+    fixtureIds_2: fixtureIds
   }
   const response = await initGrapQLClient.request(
     B_C_FEATM_H_Q_D1,
@@ -53,96 +57,102 @@ export async function FEATM_H_data_main (
   data: B_H_FEATM_Q
 ): Promise < Map <string, B_FEATM_D> > {
 
-  const map = new Map <string, B_FEATM_D> ()
-
-  // [ℹ] for each geo-selected fixture;
-  for await (const sel_fixture of data?.widget_featured_match_selection) {
-
-    let data_object_main: B_FEATM_D = { }
-
-    // OR
-
-    /*
-
-      let WIDGET_SELECTED_FIXTURE_DATA: FixtureResponse = {
-        // [ℹ] contains the final-fixture-response-data;
-        away_team_logo: undefined,             
-        away_team_name: undefined,
-        country_flag: undefined,
-        fixture_day: undefined,
-        home_team_logo: undefined,
-        home_team_name: undefined,
-        id: undefined,
-        inserted_at: undefined,
-        league_name: undefined,
-        probabilities: {
-            home: undefined,
-            away: undefined,
-            draw: undefined,
-        },
-        round_name: undefined,
-        status: undefined,
-        time: undefined,
-        tvstations: undefined,
-        valuebets: undefined,
-        live_odds: undefined,
-        match_votes: undefined,
-        best_players: undefined,
-        // translation: undefined,
-        selected_data: undefined,
-        league_id: undefined,
-        urls: undefined
-      }
-
-    */
-
-    const geo = sel_fixture?.lang
-    const _fixture_id = sel_fixture?.fixture_id
-
-    const data_object_1 = data?.widget_featured_match_best_player
-      .find(({ fixture_id }) => fixture_id == _fixture_id)
-
-    const data_object_2 = data?.widget_featured_match_votes
-      .find(({ match_id }) => match_id == _fixture_id)
-
-    const data_object_3 = data?.week_fixtures
-      .find(({ id }) => id == _fixture_id)
+  try {
     
-    const data_object_4 = data?.scores_tournaments
-      .find(({ id }) => id == _fixture_id)
+    const map = new Map <string, B_FEATM_D> ()
 
-    data_object_main.best_players = data_object_1
-    data_object_main.match_votes = data_object_2
-    data_object_main = {...data_object_main, ...data_object_3}
-    data_object_main.urls = data_object_4?.urls || null;
-    data_object_main.selected_data = sel_fixture
+    // [ℹ] for each geo-selected fixture;
+    for await (const sel_fixture of data?.widget_featured_match_selection) {
 
-    // TODO:
-      // -> deal with handling of "live-odds" data
-    data_object_main.live_odds = await FIREBASE_getTargetFixtureOdds (
-      db_real_time,
-      sel_fixture
-    )
+      let data_object_main: B_FEATM_D = { }
 
-    // TODO:
-      // -> deal with handling of "valuebets" data
-    if (data_object_main?.valuebets != null) {
-      const site_name = data_object_main?.valuebets?.bookmaker
-      const valuebets = await FEATM_H_INT_assignValueBetsData (
+      // OR
+
+      /*
+
+        let WIDGET_SELECTED_FIXTURE_DATA: FixtureResponse = {
+          // [ℹ] contains the final-fixture-response-data;
+          away_team_logo: undefined,             
+          away_team_name: undefined,
+          country_flag: undefined,
+          fixture_day: undefined,
+          home_team_logo: undefined,
+          home_team_name: undefined,
+          id: undefined,
+          inserted_at: undefined,
+          league_name: undefined,
+          probabilities: {
+              home: undefined,
+              away: undefined,
+              draw: undefined,
+          },
+          round_name: undefined,
+          status: undefined,
+          time: undefined,
+          tvstations: undefined,
+          valuebets: undefined,
+          live_odds: undefined,
+          match_votes: undefined,
+          best_players: undefined,
+          // translation: undefined,
+          selected_data: undefined,
+          league_id: undefined,
+          urls: undefined
+        }
+
+      */
+
+      const geo = sel_fixture?.lang
+      const _fixture_id = sel_fixture?.fixture_id
+
+      const data_object_1 = data?.widget_featured_match_best_player
+        .find(({ fixture_id }) => fixture_id == _fixture_id)
+
+      const data_object_2 = data?.widget_featured_match_votes
+        .find(({ match_id }) => match_id == _fixture_id)
+
+      const data_object_3 = data?.week_fixtures
+        .find(({ id }) => id == _fixture_id)
+      
+      const data_object_4 = data?.scores_tournaments
+        .find(({ id }) => id == _fixture_id)
+
+      data_object_main.best_players = data_object_1
+      data_object_main.match_votes = data_object_2
+      data_object_main = {...data_object_main, ...data_object_3}
+      data_object_main.urls = data_object_4?.urls || null;
+      data_object_main.selected_data = sel_fixture
+
+      // TODO:
+        // -> deal with handling of "live-odds" data
+      data_object_main.live_odds = await FIREBASE_getTargetFixtureOdds (
         db_real_time,
-        geo,
-        site_name
+        sel_fixture
       )
-      data_object_main.valuebets = {
-        ...data_object_main.valuebets,
-        ...valuebets
-      }
-    }
 
-    map.set(geo, data_object_main)
-  }
+      // TODO:
+        // -> deal with handling of "valuebets" data
+      if (data_object_main?.valuebets != null) {
+        const site_name = data_object_main?.valuebets?.bookmaker
+        const valuebets = await FEATM_H_INT_assignValueBetsData (
+          db_real_time,
+          geo,
+          site_name
+        )
+        data_object_main.valuebets = {
+          ...data_object_main.valuebets,
+          ...valuebets
+        }
+      }
+
+      map.set(geo, data_object_main)
+    }
   
-  return map
+    return map
+
+  } catch (error) {
+    console.error(`❌ ERR: ${error}`)
+  }
 }
 
 async function FEATM_H_INT_assignValueBetsData (

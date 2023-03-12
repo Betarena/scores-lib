@@ -1005,8 +1005,8 @@ export async function STA_T_translations_main (
 
     const MERGED_OBJECT_T = {
       ...object, 
-      ...objectFixAbout?.translations,
-      ...objectFixGeneralTranslation?.widgets_no_data_available
+      ...objectFixAbout,
+      no_data_t: objectFixGeneralTranslation.widgets_no_data_available
     }
     fix_odds_translation_map.set(lang_, MERGED_OBJECT_T)
   }

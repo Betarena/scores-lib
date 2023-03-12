@@ -3,7 +3,7 @@
 
 import { GraphQLClient } from "graphql-request";
 import { B_H2H_T, B_H_H2H_Q, B_H_H2H_SJ_HF } from "../../types/head-2-head";
-import { B_C_H2H_F_Q_D0, B_C_H2H_F_Q_D2, B_C_H2H_F_Q_T } from "../graphql/query.head-2-head.js";
+import { B_C_H2H_F_Q_D0, B_C_H2H_F_Q_D1, B_C_H2H_F_Q_D2, B_C_H2H_F_Q_T } from "../graphql/query.head-2-head.js";
 
 //#endregion IMPORTS
 
@@ -63,7 +63,7 @@ export async function H2H_F_get_target_h2h(
 		team_ids_arr
 	};
 	const response: B_H_H2H_Q = await initGrapQLClient.request(
-    B_C_H2H_F_Q_D0,
+    B_C_H2H_F_Q_D1,
     VARIABLES
   );
 

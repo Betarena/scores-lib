@@ -74,7 +74,6 @@ export const B_C_STA_T_Q_D0 = gql`
       color_codes
       sports
     }
-    
   }
 `;
 
@@ -123,7 +122,7 @@ export const B_C_STA_T_Q_T = gql`
 export const B_C_STA_T_Q_D1 = gql`
   query B_C_STA_T_Q_D1
   (
-    $leagueIds: [numeric!]
+    $leagueIdsArr: [numeric!]
   )
   @cached 
   (ttl: 300)
@@ -131,7 +130,7 @@ export const B_C_STA_T_Q_D1 = gql`
     scores_football_leagues (
       where: {
         id: {
-          _in: $leagueIds
+          _in: $leagueIdsArr
         }
       }
     )
@@ -146,7 +145,7 @@ export const B_C_STA_T_Q_D1 = gql`
     scores_football_standings (
       where: {
         league_id: {
-          _in: $leagueIds
+          _in: $leagueIdsArr
         }
       }
     )
@@ -161,7 +160,7 @@ export const B_C_STA_T_Q_D1 = gql`
     scores_football_standings_history (
       where: {
         league_id: {
-          _in: $leagueIds
+          _in: $leagueIdsArr
         }
       }
     )

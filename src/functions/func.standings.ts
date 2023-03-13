@@ -4,7 +4,7 @@
 import { GraphQLClient } from "graphql-request";
 import { B_H_STSH, PurpleDatumHist } from "../../types/hasura";
 import { B_H_STA_Q, B_STA_D, B_STA_T, STA_Groups, STA_Team } from "../../types/standings";
-import { B_C_STA_T_Q_D0, B_C_STA_T_Q_D2, B_C_STA_T_Q_T } from "../graphql/query.standings.js";
+import { B_C_STA_T_Q_D0, B_C_STA_T_Q_D1, B_C_STA_T_Q_D2, B_C_STA_T_Q_T } from "../graphql/query.standings.js";
 
 //#endregion IMPORTS
 
@@ -817,7 +817,7 @@ export async function STA_T_get_target_leagues (
     leagueIdsArr
   }
 	const response: B_H_STA_Q = await initGrapQLClient.request (
-    B_C_STA_T_Q_D0,
+    B_C_STA_T_Q_D1,
     VARIABLES
   );
 

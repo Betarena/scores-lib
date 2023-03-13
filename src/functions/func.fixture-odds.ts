@@ -427,7 +427,7 @@ export async function fixturesGroupByLeague(
 
             if (fixture.id === fixture_id) {
               
-              // if (dev) console.log(`fixture_id: ${fixture.id} | before: ${fixture.status}`)
+              // console.log(`fixture_id: ${fixture.id} | before: ${fixture.status}`)
 
               fixture.round = historic_fixtures_map.get(fixture.id)?.round_j?.data?.name;
               fixture.fixture_date = historic_fixtures_map.get(fixture.id)?.fixture_day;
@@ -450,7 +450,7 @@ export async function fixturesGroupByLeague(
               fixture.fixture_link = historic_fixtures_map.get(fixture.id).urls
               fixture.media_link = historic_fixtures_map.get(fixture.id).media_link
 
-              // if (dev) console.log(`fixture_id: ${fixture.id} | after: ${fixture.status} | expected: ${historicFixturesMap.get(fixture.id)?.time_j?.status}`)
+              // console.log(`fixture_id: ${fixture.id} | after: ${fixture.status} | expected: ${historic_fixtures_map.get(fixture.id)?.time_j?.status}`)
             }
           }
         }

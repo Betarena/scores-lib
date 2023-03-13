@@ -1,7 +1,7 @@
 {
   "name": "@betarena/scores-lib",
-  "version": "0.5.7",
-  "description": "Global Functions, Declarations, GraphQL and Types for Betarena",
+  "version": "0.7.0",
+  "description": "Global methods, graphQL, types & Declarations for Betarena Scores Platform",
   "main": "",
   "types": "index.d.ts",
   "scripts": {
